@@ -15,6 +15,7 @@ const Header = () => {
                 <hs.headerText>기업 서비스 {'>'}</hs.headerText>
             </hs.headerservice>
             <hs.header>
+            <hs.container>
                 <hs.LogoImg src={Logo} />
                 <hs.tabList>
                     <ul>
@@ -23,17 +24,16 @@ const Header = () => {
                         <li><a href="">채용공고</a></li>
                     </ul>
                     <hs.tabTxt>
-                        <hs.Buttons>
-                            <a href="">
-                                <hs.tabImg src={tabImg1}></hs.tabImg>
-                                <p>팀 블라인드 채용</p>
-                                <hs.tabImg src={tabImg2}></hs.tabImg>
-                            </a>
-                            <button className="write">글쓰기</button>
-                            <button className="login">로그인</button>
-                        </hs.Buttons>
+                        <a href="">
+                            <hs.tabImg src={tabImg1}></hs.tabImg>
+                            <p><strong>팀 블라인드 채용</strong></p>
+                            <hs.tabImg src={tabImg2}></hs.tabImg>
+                        </a>
+                        <button className="write">글쓰기</button>
+                        <button className="login">로그인</button>
                     </hs.tabTxt>
                 </hs.tabList>
+            </hs.container>
             </hs.header>
 
 

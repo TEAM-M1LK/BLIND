@@ -16,15 +16,19 @@ export const headerText = styled.div`
 `
 export const PopupLogoImage = styled.img`
     width: 20px;
-    height: 220px;
+    height: 20px;
     padding-right:10px;
 `
-
 export const header = styled.div`
-    padding:0 20px;
-    max-width: 1180px;
+    width: 100vw;
     height:80px;
-    margin:0 40px;
+    border-bottom: 1px solid #d4d4d4;
+`
+export const container = styled.div`
+    padding:0 20px;
+    width:76vw;
+    margin:auto;
+    height:100%;
     display: flex;
     align-items: center;
 `
@@ -49,13 +53,21 @@ export const tabList = styled.div`
 `
 export const tabTxt = styled.div`
     display: flex;
-    right:20px;
-    top:60px;
-    position:fixed;
+    justify-content: center;
+    position:absolute;
+    top:45px;
+    right:12vw;
     align-items: center;
     padding:4px;
+    line-height: 60px;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     p {
         display: inline-block;
+        font-size: 14px;
     }
     button {
         width:82px;
@@ -75,20 +87,7 @@ export const tabTxt = styled.div`
     }
 `
 export const tabImg = styled.img`
-width:16px;
-height:16px;
-margin-right: 6px;
-margin-top:-1px;
-margin-bottom:1px;
-`
-
-export const Buttons = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    a {
-        display:flex;
-        align-items: center;
-    }
-
+    width:16px;
+    height:16px;
+    margin-right:6px;
 `

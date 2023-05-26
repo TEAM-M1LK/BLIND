@@ -35,6 +35,7 @@ export const container = styled.div`
 export const LogoImg = styled.img`
     width:160px;
     height:40px;
+    cursor: pointer;
 `
 export const tabList = styled.div`
     a {
@@ -70,6 +71,7 @@ export const tabTxt = styled.div`
         font-size: 14px;
     }
     button {
+        cursor: pointer;
         width:82px;
         height:40px;
         border:none;

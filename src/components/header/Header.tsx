@@ -29,8 +29,8 @@ const Header = () => {
                             <p><strong>팀 블라인드 채용</strong></p>
                             <hs.tabImg src={tabImg2}></hs.tabImg>
                         </a>
-                        <button className="write">글쓰기</button>
-                        <button className="login">로그인</button>
+                        <button className="write"><strong>글쓰기</strong></button>
+                        <button className="login"><strong>로그인</strong></button>
                     </hs.tabTxt>
                 </hs.tabList>
             </hs.container>

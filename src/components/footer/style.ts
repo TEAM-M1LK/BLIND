@@ -4,6 +4,7 @@ export const footer = styled.div`
     width:100vw;
     height:125px;
     transform : translateY(185vh);
+    margin:0;
     margin-top:60px;
     border-top: 1px solid #d4d4d4;
     bottom:0;
@@ -31,13 +32,26 @@ export const info = styled.div`
 `
 export const footerbar = styled.div`
     display: flex;
-    gap:20px;
-    a {
+    a{
         text-decoration: none;
         color: #94969b;
         font-size: 14px;
         line-height: 35px;
+        position:relative;
+        padding-right: 10px;
     } 
+    a:nth-child(n+2){
+        padding-left:10px;
+    }
+    a:nth-child(n+2)::before{
+        position:absolute;
+        left:0;
+        top:calc(50% - 5px);
+        height:10px;
+        width:1px;
+        background-color: #d4d4d4;
+        content: "";
+    }
 `
 export const button = styled.div`
     right:12vw;
@@ -60,6 +74,7 @@ export const button = styled.div`
         color: #222;
         font-size: 12px;
     }
+
 `
 export const download_img = styled.img`
     align-items: center;

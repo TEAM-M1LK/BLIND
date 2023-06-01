@@ -1,10 +1,9 @@
-import Header from "components/header/Header";
 import React from "react";
 import * as S from "./HomeLayout.style";
 import category from "data/category";
 import Arrow from "assets/arrow.svg";
 import Search from "assets/search.svg";
-import Footer from "components/footer/Footer";
+import Header from "components/header/Header";
 
 const HomeLayout = () => {
   return (
@@ -52,9 +51,7 @@ const HomeLayout = () => {
           </S.HomeAsideContainer>
         </S.HomeContainer>
       </S.HomeLayout>
-      <Footer />
     </>
   );
 };
-
 export default HomeLayout;

@@ -1,10 +1,9 @@
-import React from 'react'
-import * as hs from './style'
-import Share from 'assets/share.svg'
-import Logo from 'assets/logo.png'
-import tabImg1 from 'assets/tabimg.png'
-import tabImg2 from 'assets/tabimg2.png'
-
+import React from "react";
+import * as hs from "./style";
+import Share from "assets/share.svg";
+import Logo from "assets/logo.png";
+import tabImg1 from "assets/tabimg.png";
+import tabImg2 from "assets/tabimg2.png";
 
 const Header = () => {
     return (
@@ -29,8 +28,8 @@ const Header = () => {
                             <p><strong>팀 블라인드 채용</strong></p>
                             <hs.tabImg src={tabImg2}></hs.tabImg>
                         </a>
-                        <button className="write"><strong>글쓰기</strong></button>
-                        <button className="login"><strong>로그인</strong></button>
+                        <button className="write">글쓰기</button>
+                        <button className="login">로그인</button>
                     </hs.tabTxt>
                 </hs.tabList>
             </hs.container>

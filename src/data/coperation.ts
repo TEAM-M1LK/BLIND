@@ -1,5 +1,5 @@
 const coperation = [
-    {src:"images/coperation/daeryun.svg", name:"대륜에인스", score:"4.0"},
+    {src:"images/coperation/daeryun.svg", name:"대륜이엔에스", score:"4.0"},
     {src:"images/coperation/publica.svg", name:"비바리퍼블리카", score:"3.9"},
     {src:"images/coperation/skon.svg", name:"SK 온", score:"3.8"},
     {src:"images/coperation/naver.svg", name:"네이버", score:"3.7"},

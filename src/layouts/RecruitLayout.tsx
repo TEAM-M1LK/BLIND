@@ -2,7 +2,10 @@ import React from "react";
 import * as S from "./RecruitLayout.style";
 import Header from "components/header/Header";
 import postCategory from "data/post_category";
+<<<<<<< HEAD
 import Footer from "components/footer/Footer";
+=======
+>>>>>>> origin
 
 const categoryItem = [
   "채용 전체",
@@ -71,7 +74,10 @@ const RecruitLayout = () => {
           ))}
         </S.PostContainer>
       </S.RecruitContainer>
+<<<<<<< HEAD
       <Footer />
+=======
+>>>>>>> origin
     </S.RecruitLayout>
   );
 };

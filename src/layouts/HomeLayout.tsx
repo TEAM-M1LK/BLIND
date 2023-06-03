@@ -52,7 +52,6 @@ const HomeLayout = () => {
           </S.HomeAsideContainer>
         </S.HomeContainer>
       </S.HomeLayout>
-      <Footer />
     </>
   );
 };

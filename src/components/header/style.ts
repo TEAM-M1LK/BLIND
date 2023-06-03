@@ -7,6 +7,7 @@ export const headerservice = styled.div`
   background-color: #222;
   color: white;
   align-items: center;
+  padding-left: 30px;
   font-size: 14px;
 `;
 export const headerText = styled.div`
@@ -15,7 +16,6 @@ export const headerText = styled.div`
 export const PopupLogoImage = styled.img`
   width: 20px;
   height: 20px;
-  padding-right: 10px;
   padding-left: 30px;
 `;
 export const header = styled.div`
@@ -32,9 +32,9 @@ export const container = styled.div`
   align-items: center;
 `;
 export const LogoImg = styled.img`
-    width:160px;
-    height:40px;
-`
+  width: 160px;
+  height: 40px;
+`;
 export const tabList = styled.div`
   a {
     text-decoration: none;
@@ -51,40 +51,40 @@ export const tabList = styled.div`
   }
 `;
 export const tabTxt = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 45px;
+  right: 12vw;
+  align-items: center;
+  padding: 4px;
+  line-height: 60px;
+  a {
     display: flex;
-    justify-content: center;
-    position:absolute;
-    top:45px;
-    right:12vw;
     align-items: center;
-    padding:4px;
-    line-height: 60px;
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    p {
-        display: inline-block;
-        font-size: 14px;
-    }
-    button {
-        width:82px;
-        height:40px;
-        border:none;
-        font-size:14px;
-        margin-left:10px;
-    }
-    .write {
-        background-color: #da3238;
-        color:white;
-    }
-    .login {
-        background-color:white;
-        color:#222;
-        border:1px solid #d4d4d4;
-    }
-`
+    justify-content: center;
+  }
+  p {
+    display: inline-block;
+    font-size: 14px;
+  }
+  button {
+    width: 82px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .write {
+    background-color: #da3238;
+    color: white;
+  }
+  .login {
+    background-color: white;
+    color: #222;
+    border: 1px solid #d4d4d4;
+  }
+`;
 export const tabImg = styled.img`
   width: 16px;
   height: 16px;

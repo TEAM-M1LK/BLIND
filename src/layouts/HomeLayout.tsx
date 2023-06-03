@@ -3,6 +3,7 @@ import * as S from "./HomeLayout.style";
 import category from "data/category";
 import Arrow from "assets/arrow.svg";
 import Search from "assets/search.svg";
+import Footer from "components/footer/Footer";
 import Header from "components/header/Header";
 
 const HomeLayout = () => {

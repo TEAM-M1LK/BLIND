@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const headerservice = styled.div`
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 40px;
   background-color: #222;
   color: white;
@@ -16,7 +16,7 @@ export const headerText = styled.div`
 export const PopupLogoImage = styled.img`
   width: 20px;
   height: 20px;
-  padding-right: 10px;
+  padding-left: 30px;
 `;
 export const header = styled.div`
   width: 100vw;

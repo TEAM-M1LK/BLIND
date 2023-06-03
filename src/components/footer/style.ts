@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const footer = styled.div`
     width:100vw;
     height:125px;
-    transform : translateY(185vh);
+    transform : translateY(135vh);
     margin:0;
     margin-top:60px;
     border-top: 1px solid #d4d4d4;
-    bottom:0;
 `;
 export const container = styled.div`
     width:76vw;

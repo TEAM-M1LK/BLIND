@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import Review from "pages/Review";
 import Detail from "pages/Detail";
+import Write from "pages/Write";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/recruit" element={<Recruit />} />
           <Route path="/review" element={<Review />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/write" element={<Write />} />
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

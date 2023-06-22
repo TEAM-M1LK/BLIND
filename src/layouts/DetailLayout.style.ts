@@ -134,6 +134,7 @@ export const commentBox = styled.div`
   align-items: center;
   display: flex;
   input {
+    outline: none;
     border: none;
     width: 100%;
     height: 100%;
@@ -141,6 +142,18 @@ export const commentBox = styled.div`
   input::placeholder {
     color: #222;
     font-size: 16px;
+  }
+
+  button {
+    width: 90px;
+    height: 36px;
+    cursor: pointer;
+    background-color: #da3238;
+    margin-right: 16px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
   }
 `;
 export const photo = styled.img`

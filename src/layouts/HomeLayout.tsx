@@ -35,13 +35,13 @@ const HomeLayout = () => {
   const [posts, setPosts] = React.useState<Post[]>([
     {
       key: "",
-      category: "스포츠",
-      comments: [{ key: "", contents: "", author: "", company: "" }],
-      company: "카카오",
-      title: "test",
-      contents: "asd asd",
+      title: "",
+      contents: "",
+      category: "",
+      company: "",
+      author: "",
+      comments: [],
       date: new Date(),
-      author: "우비닝",
       like: 0,
       view: 0,
     },
@@ -58,27 +58,6 @@ const HomeLayout = () => {
     });
   }, []);
 
-  const onCreatePost = () => {
-    const newPostKey = push(child(ref(db), "article")).key;
-
-    const postData = {
-      key: newPostKey,
-      title: "test",
-      contents: "asd asd",
-      category: "스포츠",
-      company: "카카오",
-      author: "우빈우빈",
-      comments: [{ key: "", contents: "", author: "", company: "" }],
-      date: new Date(),
-      like: 0,
-      view: 0,
-    };
-    const updates: { [key: string]: any } = {};
-    updates["/article/" + newPostKey] = postData;
-
-    return update(ref(db), updates);
-  };
-
   return (
     <>
       <Header />
@@ -86,7 +65,6 @@ const HomeLayout = () => {
         <S.HomeContainer>
           <S.HomeCategoryContainer>
             <S.HomeCategorySearchContainer>
-              <button onClick={onCreatePost}>asd</button>
               <S.HomeCategorySearchButton>
                 <S.HomeCategorySearchButtonImg src={Search} />
               </S.HomeCategorySearchButton>
@@ -123,7 +101,7 @@ const HomeLayout = () => {
                           {item.title}
                         </S.HomeCategoryPostTitle>
                         <S.HomeCategoryPostView>
-                          {item.view}
+                          {Math.floor(Math.random() * 1000)}
                         </S.HomeCategoryPostView>
                       </S.HomeCategoryPostContainer>
                     );

@@ -17,22 +17,53 @@ import url from "../assets/url.png";
 import photo from "../assets/photo.png";
 import good2 from "../assets/good2.png";
 import recommend from "../data/recommend";
-import { getDatabase, ref, onValue } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  onValue,
+  push,
+  child,
+  update,
+} from "firebase/database";
 import { useParams } from "react-router-dom";
-import { getFirestore } from "firebase/firestore";
 import { Post } from "./HomeLayout";
 
 const DetailLayout = () => {
   const db = getDatabase();
   const [post, setPost] = React.useState<Post>();
+  const [views] = React.useState(Math.floor(Math.random() * 1000));
+  const [commentContent, setCommentContent] = React.useState("");
   const { id } = useParams();
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     onValue(ref(db, `article/${id}`), (res) => {
-      console.log(res.val());
-      setPost(res.val());
+      setPost({
+        ...res.val(),
+        comments: res.val().comments && Object.values(res.val()?.comments),
+      });
     });
   }, []);
+
+  const onCreateComment = () => {
+    const newPostKey = push(child(ref(db), "article")).key;
+    const updates: { [key: string]: any } = {};
+    updates[`/article/${id}/comments/${newPostKey}`] = {
+      key: newPostKey,
+      company: "부산소마고",
+      author: "i********",
+      contents: commentContent,
+      recomments: [],
+    };
+
+    return update(ref(db), updates);
+  };
+
+  const onCountLike = () => {
+    const updates: { [key: string]: any } = {};
+    updates[`/article/${id}/like`] = (post?.like || 0) + 1;
+
+    return update(ref(db), updates);
+  };
 
   return (
     <div>
@@ -54,7 +85,7 @@ const DetailLayout = () => {
               <S.postIcon src={time} />
               <span>{JSON.stringify(post?.date)}</span>
               <S.postIcon src={view} />
-              <span>{post?.view}</span>
+              <span>{views}</span>
               <S.postIcon src={comments} />
               <span>{post?.comments?.length || 0}</span>
               <S.Icon>
@@ -67,7 +98,7 @@ const DetailLayout = () => {
             <p>{post?.contents}</p>
           </S.content>
           <S.bottomInfo>
-            <S.bottomInfoIcon src={good} />
+            <S.bottomInfoIcon src={good} onClick={onCountLike} />
             <span>{post?.like}</span>
             <S.bottomInfoIcon src={comments2} />
             <span>{post?.comments?.length || 0}</span>
@@ -84,7 +115,13 @@ const DetailLayout = () => {
             </h3>
             <S.commentBox>
               <S.photo src={photo} />
-              <input type="text" placeholder="댓글을 남겨주세요" />
+              <input
+                type="text"
+                placeholder="댓글을 남겨주세요"
+                onChange={(e) => setCommentContent(e.target.value)}
+                value={commentContent}
+              />
+              <button onClick={onCreateComment}>작성</button>
             </S.commentBox>
             {post?.comments?.map((item) => (
               <S.comment key={item.key}>

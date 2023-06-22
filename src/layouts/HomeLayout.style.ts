@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HomeLayout = styled.div`
@@ -72,11 +73,33 @@ export const HomeCategorySearchInput = styled.input`
   }
 `;
 
+export const HomeCategoryPostContainer = styled(Link)`
+  margin: 8px 0 8px 0;
+  display: flex;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  align-items: center;
+`;
+
+export const HomeCategoryPostTitle = styled.span`
+  font-size: 14px;
+  font-weight: 500;
+`;
+
+export const HomeCategoryPostView = styled.span`
+  font-size: 13px;
+  color: gray;
+  font-weight: 400;
+  margin-left: auto;
+`;
+
 export const HomeCategoryItemContainer = styled.div`
   width: 46%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const HomeCategoryItemHeader = styled.div`

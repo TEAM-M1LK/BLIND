@@ -15,17 +15,18 @@ const Header = () => {
         <hs.headerText>기업 서비스 {">"}</hs.headerText>
       </hs.headerservice>
       <hs.header>
+        <hs.container>
         <hs.LogoImg src={Logo} />
         <hs.tabList>
           <ul>
             <li>
-              <a href="">홈</a>
+              <Link to="/">홈</Link>
             </li>
             <li>
-              <a href="">기업 리뷰</a>
+              <Link to="/">기업 리뷰</Link>
             </li>
             <li>
-              <a href="">채용공고</a>
+              <Link to="/">채용공고</Link>
             </li>
           </ul>
           <hs.tabTxt>
@@ -40,6 +41,7 @@ const Header = () => {
             </hs.Buttons>
           </hs.tabTxt>
         </hs.tabList>
+        </hs.container>
       </hs.header>
     </div>
   );

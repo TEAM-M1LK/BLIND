@@ -22,6 +22,8 @@ export const header = styled.div`
   width: 100vw;
   height: 80px;
   border-bottom: 1px solid #d4d4d4;
+  display: flex;
+  align-items: center;
 `;
 export const container = styled.div`
   padding: 0 20px;
@@ -90,3 +92,9 @@ export const tabImg = styled.img`
   height: 16px;
   margin-right: 6px;
 `;
+
+export const Buttons = styled.div`
+  width: 327px;
+  display: flex;
+  align-items: center;
+`

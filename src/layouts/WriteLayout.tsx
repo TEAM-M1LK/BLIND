@@ -3,6 +3,8 @@ import * as S from "./WriteLayout.style";
 import { child, getDatabase, push, ref, update } from "firebase/database";
 import categories from "data/category";
 import Header from "components/header/Header";
+import arrow from "../assets/arrow.svg";
+import Footer from "components/footer/Footer";
 
 interface reducerAction {
   name: string;
@@ -46,18 +48,9 @@ const WriteLayout = () => {
     <>
       <Header />
       <S.WriteLayout>
-        <input
-          onChange={(e) => dispatch(e.target)}
-          name="title"
-          placeholder="제목"
-        />
-        <input
-          onChange={(e) => dispatch(e.target)}
-          name="contents"
-          placeholder="내용"
-        />
-        <div>
-          <span>카테고리</span>
+        <S.post>
+        <S.category>
+          <span>토픽 <S.asrrowImg src={arrow} /></span>
           <select onChange={(e) => setCategory(e.target.value)} name="category">
             {categories.map(({ name }) => (
               <option value={name} key={name}>
@@ -65,19 +58,37 @@ const WriteLayout = () => {
               </option>
             ))}
           </select>
-        </div>
+        </S.category>
+        <S.title>
+          <input
+            onChange={(e) => dispatch(e.target)}
+            name="title"
+            placeholder="제목 입력"
+          />
+        </S.title>
+        <S.content>
         <input
           onChange={(e) => dispatch(e.target)}
-          name="company"
-          placeholder="회사명"
+          name="contents"
+          placeholder="내용"
         />
-        <input
-          onChange={(e) => dispatch(e.target)}
-          name="author"
-          placeholder="작성자"
-        />
-        <button onClick={onCreatePost}>글 생성</button>
+        </S.content>
+          <S.info>
+            <input
+              onChange={(e) => dispatch(e.target)}
+              name="company"
+              placeholder="회사명"
+            />
+            <input
+              onChange={(e) => dispatch(e.target)}
+              name="author"
+              placeholder="작성자"
+            />
+            <button onClick={onCreatePost}>글 생성</button>
+          </S.info>
+        </S.post>
       </S.WriteLayout>
+      <Footer />
     </>
   );
 };

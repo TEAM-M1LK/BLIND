@@ -6,6 +6,7 @@ import { RecoilRoot } from "recoil";
 import Review from "pages/Review";
 import Detail from "pages/Detail";
 import Write from "pages/Write";
+import Login from "pages/Login";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/review" element={<Review />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/write" element={<Write />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

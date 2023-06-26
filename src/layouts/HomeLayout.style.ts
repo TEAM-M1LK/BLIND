@@ -19,8 +19,12 @@ export const HomeCategoryContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap:20px;
 `;
+
+export const HomeCategoryTopicBest = styled.div`
+  width:100%;
+`
 
 export const HomeAsideContainer = styled.div`
   width: 26%;
@@ -154,3 +158,46 @@ export const HomeCategoryDoubleContainer = styled.div`
     margin-bottom: auto;
   }
 `;
+
+export const BestRecruitContainer = styled.div`
+  width:100%;
+  display: flex;
+  gap:20px;
+  overflow-x: scroll;
+  white-space: nowrap;
+`
+
+export const BestRecruitItem = styled.div`
+  width:200px;
+  height:242px;
+  padding-top:16px;
+`;
+
+export const RecruitImage = styled.img`
+  width:200px;
+  height:100px;
+`
+export const RecruitCp = styled.div`
+  width:100%;
+  padding-top:12px;
+  display: flex;
+  align-items: center;
+`
+
+export const RecruitCpImage = styled.img`
+  width:26px;
+  height:26px;
+  border-radius: 100%;
+  margin-right:7px;
+`
+
+export const RecruitCpName = styled.div`
+  font-size: 12px;
+`
+
+export const RecruitTitle = styled.div`
+  margin-top:8px;
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 40px;
+`

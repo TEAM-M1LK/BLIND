@@ -4,6 +4,7 @@ import category from "data/category";
 import Arrow from "assets/arrow.svg";
 import Search from "assets/search.svg";
 import Header from "components/header/Header";
+import recruit from "data/best_recruit";
 import {
   child,
   getDatabase,
@@ -31,6 +32,7 @@ export interface Post {
   view: number;
 }
 
+
 const HomeLayout = () => {
   const [posts, setPosts] = React.useState<Post[]>([
     {
@@ -48,6 +50,8 @@ const HomeLayout = () => {
   ]);
   const db = getDatabase();
 
+  
+
   React.useEffect(() => {
     onValue(ref(db, "article"), (res) => {
       setPosts(
@@ -57,6 +61,15 @@ const HomeLayout = () => {
       );
     });
   }, []);
+
+const [topPosts, setTopPosts] = React.useState<Post[]>([]);
+
+React.useEffect(() => {
+  const sortedPosts = [...posts].sort((a, b) => b.like - a.like);
+  const topFivePosts = sortedPosts.slice(0, 5);
+  setTopPosts(topFivePosts);
+}, [posts]);
+
 
   return (
     <>
@@ -70,6 +83,7 @@ const HomeLayout = () => {
               </S.HomeCategorySearchButton>
               <S.HomeCategorySearchInput placeholder="관심있는 내용을 검색해보세요!" />
             </S.HomeCategorySearchContainer>
+            <S.HomeCategoryTopicBest>
             <S.HomeMainCategoryHeader>
               <S.HomeCategoryItemImage src="images/topic_best.svg" />
               <S.HomeCategoryItemTitle>토픽 베스트</S.HomeCategoryItemTitle>
@@ -77,6 +91,14 @@ const HomeLayout = () => {
               <S.HomeCategoryItemMore>더보기</S.HomeCategoryItemMore>
               <S.HomeCategoryItemIcon src={Arrow} />
             </S.HomeMainCategoryHeader>
+            {topPosts.map((item) => (
+              <S.HomeCategoryPostContainer to={`/detail/${item.key}`} key={item.key}>
+                <S.HomeCategoryPostTitle>{item.title}</S.HomeCategoryPostTitle>
+                <S.HomeCategoryPostView>{Math.floor(Math.random() * 1000)}
+                            </S.HomeCategoryPostView>
+              </S.HomeCategoryPostContainer>
+            ))}
+            </S.HomeCategoryTopicBest>
             <S.HomeMainCategoryHeader>
               <S.HomeCategoryItemImage src="images/popular.svg" />
               <S.HomeCategoryItemTitle>인기 채용</S.HomeCategoryItemTitle>
@@ -84,6 +106,18 @@ const HomeLayout = () => {
               <S.HomeCategoryItemMore>더보기</S.HomeCategoryItemMore>
               <S.HomeCategoryItemIcon src={Arrow} />
             </S.HomeMainCategoryHeader>
+            <S.BestRecruitContainer>
+            {recruit.map(({name,image, cp_image, title}) => (
+              <S.BestRecruitItem key={name}>
+              <S.RecruitImage src={image}/>
+              <S.RecruitCp>
+                <S.RecruitCpImage src={cp_image}/>
+                <S.RecruitCpName>{name}</S.RecruitCpName>
+              </S.RecruitCp>
+              <S.RecruitTitle>{title}</S.RecruitTitle>
+              </S.BestRecruitItem>
+            ))}
+            </S.BestRecruitContainer> 
             {category.map((item, index) => (
               <S.HomeCategoryDoubleContainer key={index}>
                 {item.map(({ name, src }) => (

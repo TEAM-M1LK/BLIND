@@ -68,7 +68,7 @@ const [topPosts, setTopPosts] = React.useState<Post[]>([]);
 
 React.useEffect(() => {
   const sortedPosts = [...posts].sort((a, b) => b.like - a.like);
-  const topFivePosts = sortedPosts.slice(0, 5);
+  const topFivePosts = sortedPosts.slice(0, 10);
   setTopPosts(topFivePosts);
 }, [posts]);
 

@@ -144,3 +144,13 @@ export const HomeMainCategoryHeader = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const HomeCategoryDoubleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    margin-bottom: auto;
+  }
+`;

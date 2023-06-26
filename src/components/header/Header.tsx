@@ -44,7 +44,13 @@ const Header = () => {
                 >
                   글쓰기
                 </button>
-                <button className="login">로그인</button>
+                <button
+                  className="login"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/login")}
+                >
+                  로그인
+                </button>
               </hs.Buttons>
             </hs.tabTxt>
           </hs.tabList>

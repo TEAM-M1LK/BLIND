@@ -84,29 +84,35 @@ const HomeLayout = () => {
               <S.HomeCategoryItemMore>더보기</S.HomeCategoryItemMore>
               <S.HomeCategoryItemIcon src={Arrow} />
             </S.HomeMainCategoryHeader>
-            {category.map(({ name, src }) => (
-              <S.HomeCategoryItemContainer key={name}>
-                <S.HomeCategoryItemHeader>
-                  <S.HomeCategoryItemImage src={src} />
-                  <S.HomeCategoryItemTitle>{name}</S.HomeCategoryItemTitle>
-                  <S.HomeCategoryItemBlindhire src="" />
-                  <S.HomeCategoryItemMore>더보기</S.HomeCategoryItemMore>
-                  <S.HomeCategoryItemIcon src={Arrow} />
-                </S.HomeCategoryItemHeader>
-                {posts.map((item) => {
-                  if (item.category === name)
-                    return (
-                      <S.HomeCategoryPostContainer to={`/detail/${item.key}`}>
-                        <S.HomeCategoryPostTitle>
-                          {item.title}
-                        </S.HomeCategoryPostTitle>
-                        <S.HomeCategoryPostView>
-                          {Math.floor(Math.random() * 1000)}
-                        </S.HomeCategoryPostView>
-                      </S.HomeCategoryPostContainer>
-                    );
-                })}
-              </S.HomeCategoryItemContainer>
+            {category.map((item, index) => (
+              <S.HomeCategoryDoubleContainer key={index}>
+                {item.map(({ name, src }) => (
+                  <S.HomeCategoryItemContainer key={name}>
+                    <S.HomeCategoryItemHeader>
+                      <S.HomeCategoryItemImage src={src} />
+                      <S.HomeCategoryItemTitle>{name}</S.HomeCategoryItemTitle>
+                      <S.HomeCategoryItemBlindhire src="" />
+                      <S.HomeCategoryItemMore>더보기</S.HomeCategoryItemMore>
+                      <S.HomeCategoryItemIcon src={Arrow} />
+                    </S.HomeCategoryItemHeader>
+                    {posts.map((item) => {
+                      if (item.category === name)
+                        return (
+                          <S.HomeCategoryPostContainer
+                            to={`/detail/${item.key}`}
+                          >
+                            <S.HomeCategoryPostTitle>
+                              {item.title}
+                            </S.HomeCategoryPostTitle>
+                            <S.HomeCategoryPostView>
+                              {Math.floor(Math.random() * 1000)}
+                            </S.HomeCategoryPostView>
+                          </S.HomeCategoryPostContainer>
+                        );
+                    })}
+                  </S.HomeCategoryItemContainer>
+                ))}
+              </S.HomeCategoryDoubleContainer>
             ))}
           </S.HomeCategoryContainer>
           <S.HomeAsideContainer>

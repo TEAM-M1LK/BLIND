@@ -7,6 +7,7 @@ import Review from "pages/Review";
 import Detail from "pages/Detail";
 import Write from "pages/Write";
 import Login from "pages/Login";
+import Signup from "pages/Signup";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/write" element={<Write />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

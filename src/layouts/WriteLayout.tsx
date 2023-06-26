@@ -35,6 +35,8 @@ const WriteLayout = () => {
   });
 
   const onCreatePost = () => {
+    const { title, contents } = state;
+    if (!title || !contents) return alert("빈칸이 있습니다");
     const newPostKey = push(child(ref(db), "article")).key;
     const updates: { [key: string]: any } = {};
     updates["/article/" + newPostKey] = {

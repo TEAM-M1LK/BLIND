@@ -7,6 +7,7 @@ import Header from "components/header/Header";
 import recruit from "data/best_recruit";
 import view from "../assets/view.png";
 import good from "../assets/good2.png";
+import Footer from "components/footer/Footer";
 import {
   child,
   getDatabase,
@@ -161,6 +162,7 @@ React.useEffect(() => {
           </S.HomeAsideContainer>
         </S.HomeContainer>
       </S.HomeLayout>
+      <Footer />
     </>
   );
 };

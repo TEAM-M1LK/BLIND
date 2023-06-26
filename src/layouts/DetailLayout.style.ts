@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const container = styled.div`
   padding-top: 40px;
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
+  white-space: nowrap;
 `;
 
 export const post = styled.div`

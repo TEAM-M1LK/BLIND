@@ -6,6 +6,7 @@ export const HomeLayout = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
+  overflow: scroll;
 `;
 
 export const HomeContainer = styled.div`
@@ -170,7 +171,7 @@ export const HomeCategoryDoubleContainer = styled.div`
 export const BestRecruitContainer = styled.div`
   width:100%;
   display: flex;
-  gap:20px;
+  gap:12px;
   overflow-x: scroll;
   white-space: nowrap;
 `
@@ -178,12 +179,12 @@ export const BestRecruitContainer = styled.div`
 export const BestRecruitItem = styled.div`
   width:200px;
   height:242px;
-  padding-top:16px;
 `;
 
 export const RecruitImage = styled.img`
   width:200px;
   height:100px;
+  border-radius: 5px;
 `
 export const RecruitCp = styled.div`
   width:100%;

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const footer = styled.div`
     width:100vw;
     height:125px;
-    transform : translateY(135vh);
+    transform : translateY(0vh);
     margin:0;
-    margin-top:60px;
+    margin-top:20px;
     border-top: 1px solid #d4d4d4;
 `;
 export const container = styled.div`

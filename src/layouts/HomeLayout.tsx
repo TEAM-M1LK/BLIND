@@ -5,6 +5,8 @@ import Arrow from "assets/arrow.svg";
 import Search from "assets/search.svg";
 import Header from "components/header/Header";
 import recruit from "data/best_recruit";
+import view from "../assets/view.png";
+import good from "../assets/good2.png";
 import {
   child,
   getDatabase,
@@ -93,9 +95,11 @@ React.useEffect(() => {
             </S.HomeMainCategoryHeader>
             {topPosts.map((item) => (
               <S.HomeCategoryPostContainer to={`/detail/${item.key}`} key={item.key}>
+                <S.CategoryBox>{item.category}</S.CategoryBox>
                 <S.HomeCategoryPostTitle>{item.title}</S.HomeCategoryPostTitle>
-                <S.HomeCategoryPostView>{Math.floor(Math.random() * 1000)}
-                            </S.HomeCategoryPostView>
+                <S.HomeCategoryPostView>
+                  <img src={good}/>{item.like}
+                </S.HomeCategoryPostView>
               </S.HomeCategoryPostContainer>
             ))}
             </S.HomeCategoryTopicBest>
@@ -139,6 +143,7 @@ React.useEffect(() => {
                               {item.title}
                             </S.HomeCategoryPostTitle>
                             <S.HomeCategoryPostView>
+                              <img src={view}/>
                               {Math.floor(Math.random() * 1000)}
                             </S.HomeCategoryPostView>
                           </S.HomeCategoryPostContainer>

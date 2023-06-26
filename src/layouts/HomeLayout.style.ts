@@ -96,6 +96,14 @@ export const HomeCategoryPostView = styled.span`
   color: gray;
   font-weight: 400;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  img {
+    width:16px;
+    height:15px;
+    padding-top: 1px;
+    margin-right: 3px;
+  }
 `;
 
 export const HomeCategoryItemContainer = styled.div`
@@ -200,4 +208,14 @@ export const RecruitTitle = styled.div`
   font-size: 16px;
   font-weight: bold;
   min-height: 40px;
+`
+
+export const CategoryBox = styled.div`
+  width:57px;
+  height:18px;
+  color:#94969b;
+  text-align: center;
+  border:1px solid #eee;
+  font-size: 12px;
+  margin-right:4px;
 `
